@@ -1,224 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="java.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>PERBAIKAN ETS PWEB</title>
+    
     <style>
-        .card {
-            text-align: center;
-            margin-bottom: 20px;
-            color: black;
-            
-        }
-
-        .card-body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .btn-connect {
-            margin-top: 10px;
-        }
-        .card-body h5 {
-            color: black;
-        }
+        body {
+            font-family: Arial, sans-serif; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); grid-gap: 24px;
+            margin-top: 2px;}
+            .cards {
+            width: 100%; border: 1px solid; border-color: rgb(80, 100, 255); border-radius: 5px; padding: 5px; text-align: center;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.07), 0 3px 15px 0 rgba(0, 0, 0, 0.07);}
+            .button {
+            background-color: #2e6eee; color: white; padding: 10px 13px; border: none; border-radius: 5px; text-align: center;
+            text-decoration: none; display: inline-block; font-size: 12px; margin: 4px 2px; cursor: pointer;}
+            .pokemon-name {
+            font-weight: medium;}
     </style>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <!-- Repeat this block 20 times -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Bulbasaur</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card1"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Ivysaur</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card2"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Venusaur</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card3"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Charmander</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card4"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Charmeleon</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card5"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Charizard</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card6"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Squirtle</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card7"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Wartortle</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card8"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Blastoise</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card9"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Caterpie</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card10"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Metapod</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card11"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Butterfree</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card12"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Weedle</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card13"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Kakuna</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card14"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Beedrill</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card15"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Pidgey</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card16"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Pidgeotto</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card17"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div><div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Pidgeot</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card18"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Rattata</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card19"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div>
- <!-- Card 20 -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <h5 class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        Raticate</h5>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="card20"></div>
-                    <button class="btn-primary btn-connect" data-api-endpoint="https://pokeapi.co/api/v2/pokemon?limit=20&offset=0">details</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <script> 
+        fetch('https://pokeapi.co/api/v2/pokemon?limit=5&offset=0')
+            
+        .then(response => response.json())
+            
+            .then(data => {
+                    const pokemons = data.results;
+                      pokemons.forEach(pokemon => {
+
+                    const card = document.createElement('div');
+                      card.className = 'cards';
+                    
+                    const pokemonName = document.createElement('div');
+                      pokemonName.className = 'pokemon-name';
+                      pokemonName.textContent = pokemon.name;
+                    
+                    const button = document.createElement('a');
+                      button.className = 'button';
+                      button.href = pokemon.url;
+                      button.textContent = 'detail';
+                    
+                    card.appendChild(pokemonName);
+                    
+                    card.appendChild(button);
+                    
+                    document.body.appendChild(card);
+                });
+            });
+    </script>
 </body>
 </html>
